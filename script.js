@@ -3,6 +3,11 @@ const ctx = canvas.getContext('2d');
 const clearBtn = document.querySelector("#clearBtn");
 const sizeRange = document.querySelector("#sizeRange");
 const sizeValue = document.querySelector("#sizeValue");
+const colorPicker = document.querySelector("#colorPicker");
+
+colorPicker.addEventListener("input", ()  => {
+    ctx.strokeStyle = colorPicker.value;
+});
 
 sizeRange.addEventListener("input", () => {
     ctx.lineWidth = sizeRange.value;
