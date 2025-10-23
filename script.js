@@ -4,6 +4,16 @@ const clearBtn = document.querySelector("#clearBtn");
 const sizeRange = document.querySelector("#sizeRange");
 const sizeValue = document.querySelector("#sizeValue");
 const colorPicker = document.querySelector("#colorPicker");
+const saveBtn = document.querySelector("#saveBtn");
+
+saveBtn.addEventListener("click", () => {
+    const image = canvas.toDataURL("image/png");
+
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "drawing.png";
+    link.click();
+});
 
 colorPicker.addEventListener("input", ()  => {
     ctx.strokeStyle = colorPicker.value;
