@@ -1,3 +1,5 @@
+import { resizeCanvas } from "./resize.js";
+
 const canvas = document.getElementById('drawCanvas');
 const ctx = canvas.getContext('2d');
 const clearBtn = document.querySelector("#clearBtn");
@@ -28,8 +30,7 @@ clearBtn.addEventListener("click", () => {
     ctx.clearRect(0, 0 , canvas.width, canvas.height);
 });
 
-canvas.width = canvas.offsetWidth;
-canvas.height = canvas.offsetHeight;
+resizeCanvas();
 
 ctx.lineWidth = 4;
 ctx.lineCap = 'round';
@@ -56,3 +57,7 @@ canvas.addEventListener('mousemove', (e) => {
 
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
+
+window.addEventListener("resize", () => {
+    resizeCanvas();
+})
