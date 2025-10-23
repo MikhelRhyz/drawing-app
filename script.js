@@ -1,6 +1,13 @@
 const canvas = document.getElementById('drawCanvas');
 const ctx = canvas.getContext('2d');
 const clearBtn = document.querySelector("#clearBtn");
+const sizeRange = document.querySelector("#sizeRange");
+const sizeValue = document.querySelector("#sizeValue");
+
+sizeRange.addEventListener("input", () => {
+    ctx.lineWidth = sizeRange.value;
+    sizeValue.textContent = sizeRange.value;
+});
 
 clearBtn.addEventListener("click", () => {
     ctx.clearRect(0, 0 , canvas.width, canvas.height);
