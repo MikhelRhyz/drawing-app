@@ -32,10 +32,10 @@ clearBtn.addEventListener("click", () => {
 
 resizeCanvas();
 
-ctx.lineWidth = 4;
-ctx.lineCap = 'round';
-ctx.lineJoin = 'round';
-ctx.strokeStyle = '#000';
+// ctx.lineWidth = 4;
+// ctx.lineCap = 'round';
+// ctx.lineJoin = 'round';
+// ctx.strokeStyle = '#000';
 
 let isDrawing = false;
 let lastX = 0;
